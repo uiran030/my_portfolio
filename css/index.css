@@ -1,0 +1,186 @@
+@import "utf-8";
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+@import url('https://fonts.googleapis.com/css2?family=Dongle:wght@300&display=swap');
+@font-face {
+    font-family: 'GilbeotRainbow';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2112@1.0/GilbeotRainbow.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+/* 공통작업 */
+html {overflow-X: hidden;}
+body{font-family: 'Noto Sans KR', sans-serif;}
+#header {
+    /* background-color: #87c0f9; */
+    position:fixed;
+    left:10px; top:10px;
+    width:100%;
+    z-index: 9999;
+}
+#main .sec {
+    height:100vh;
+    border:1px solid red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+}
+#main .sec h2 {margin-bottom:20px;}
+
+/* section1-타이핑효과작업 */
+.sec1 .typing-txt{
+    display: none;
+}
+.sec1 .typing {  
+    display: inline-block; 
+    animation-name: cursor; 
+    animation-duration: 0.3s; 
+    animation-iteration-count: infinite;
+    font-family: 'GilbeotRainbow';
+} 
+@keyframes cursor{ 
+    0%{border-right: 1px solid #fff} 
+    50%{border-right: 1px solid #000} 
+    100%{border-right: 1px solid #fff} 
+}
+
+/* 네비메뉴 */
+#header #menu {
+    position:fixed;
+    left:0; top:50%;
+    transform: translateY(-50%);
+    margin:0 20px;
+    z-index: 999;
+}
+#header #menu li { margin:20px 0; }
+#header #menu i {
+    border:2px solid rgb(124, 124, 124); 
+    font-size:20px; 
+    padding:10px; 
+    border-radius: 50%;
+    margin-right:10px;
+}
+#header #menu span {display: none;}
+#header #menu li:hover span { display: inline-block;}
+
+
+/* main -section1 */
+#main {
+    margin:0 auto; 
+    /* border:1px solid red; */
+}
+#main section{
+    width:100vw;
+    height: 100vh;
+}
+#main .sec1 {
+    background-image: url(../img/sct1bg.jpg);
+    background-size:cover;
+    position:relative;
+}
+#main .sec1n {
+    position:absolute;
+    top:300px; left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+}
+#main .sec1n .typing {font-weight: normal; font-size: 30px;}
+#main .sec1n .start {
+    position:relative;
+}
+
+
+/* main -section2 */
+#main .sec2 {
+    background-image: url(../img/water6.png);
+    background-size: cover;
+}
+#main .sec2box{
+    width:80%; height:60%;
+    border-radius: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+#main .sec2box .left img{width:100%;}
+#main .sec2 .middle .profile {
+    display: flex;
+    flex-flow: column;
+}
+#main .sec2 .middle .profile > p {
+    line-height: 3em;
+}
+#main .sec2box > div {
+    width:30%; 
+    height:100%; 
+    position:relative;
+    box-shadow: 4px 4px 4px 4px rgba(0,0,0,0.2);
+    border-radius: 10px;
+}
+#main .sec2box > div > h3 {position:absolute; top:0; left:50%; transform: translateX(-50%); margin:10px 0;}
+#main .sec2 .right .himap {
+    width:100%; 
+    height: 100%;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    margin-top : 15px;
+}
+#main .sec2 .right .himap > li {
+    display: flex;
+    padding:10px 0;
+    margin:5px 0;
+}
+#main .sec2 .right .himap .sm {
+    font-size: 10px; 
+    width:100px;
+    text-align: right;
+    margin-right:8px;
+    color:#aaa;
+}
+#main .sec2 .right .himap .lii > i {
+    border-radius: 50%; 
+    padding:10px;
+    background-color: rgb(63, 168, 209);
+    color:white;
+}
+#main .sec2 .right .himap li:nth-child(4) .lii > i {padding:10px 13px;}
+#main .sec2 .right .himap .out {
+    flex:1;
+    margin:10px 15px;
+    box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.2);
+    border-radius: 2px;
+}
+#main .sec2 .right .himap .in {
+    color:rgba(0,0,0,0.7);
+    padding:2px 10px;
+}
+#main .sec2 .right .himap .in > p {font-size:12px;}
+
+
+/* main -section3 */
+#skill > .row { 
+    margin:0 auto;
+    display:flex;
+    align-items: center;
+    border:1px solid black;
+    width:70%;
+    height: 60%;
+    justify-content: flex-end;
+}
+.tit {
+    font-size: 15x;
+    margin-bottom: 10px
+}
+.container { 
+    width:15%; 
+    border:1px solid red;
+    text-align:center; 
+    position:relative; 
+}
+.pBox {
+    position:absolute;
+    top:100px; left: 50%;
+    transform: translateX(-50%);
+}
