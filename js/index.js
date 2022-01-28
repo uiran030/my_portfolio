@@ -34,27 +34,27 @@ function typing(){
 }
 
 
-// 마우스 휠 이벤트 (1section당)
-var prevt = 0;
-$('section').on('mousewheel',function(e, delta){
-    if (delta>0) {
-        prevt = $(this).prev().offset().top
-    } else if (delta<0) {
-        prevt = $(this).next().offset().top
-    }
-    $('html').animate({
-        scrollTop:prevt
-    }, 1000)
-})
+// // 마우스 휠 이벤트 (1section당)
+// var prevt = 0;
+// $('section').on('mousewheel',function(e, delta){
+//     if (delta>0) {
+//         prevt = $(this).prev().offset().top
+//     } else if (delta<0) {
+//         prevt = $(this).next().offset().top
+//     }
+//     $('html').animate({
+//         scrollTop:prevt
+//     }, 1000)
+// })
 
 
 // 이지파이
-var skillTop = $('#skill').offset().top - $(window).height()
-var arrChartColor = ['#e8670c', '#ff9e5a', '#ff710d', '#7f4f2d', '#cc5b0b', '#cc3a1a'];
+var skillTop = $('#sec3').offset().top - $(window).height()
+var arrChartColor = ['#6CAFD9', '#7CDAFA', '#699AFA', '#6AB8F7', '#3E90FA'];
 var arrPercent = [90, 90, 70, 80, 50]
 
 $(window).on('scroll', function(){
-    $('#skill .skills').each(function(idx){
+    $('#sec3 .skills').each(function(idx){
         // each문에는 무조건 function이 가로안에 나옴
         $(this).attr({'data-percent':arrPercent[idx]})
         $(this).easyPieChart({
@@ -65,7 +65,7 @@ $(window).on('scroll', function(){
             scaleColor: false, // 눈금선 색상
             lineCap:'round', // 선의 끝 모양(butt, round, square)
             lineWidth:20, // 선의 폭
-            size:150, // 원형차트의 크기
+            size:130, // 원형차트의 크기
             onStart:$.noop,
             onStop:$.noop,
             onStep: function(from, to, percent) {  
@@ -75,3 +75,24 @@ $(window).on('scroll', function(){
         })
     })
 });
+
+//슬릭슬라이더 플러그인 연결
+$('.slide-group').slick({
+    autoplay:false,           //false가 기본값 (auto  X)
+    autoplaySpeed:3000,
+    speed:600,
+    dots:true,
+    // arrows:true,            //true가 기본값
+    prevArrow:'<button class="slick-arrow slick-prev"><i class="fas fa-arrow-circle-left"></i></button>',
+    nextArrow : '<button class="slick-arrow slick-next"><i class="fas fa-arrow-circle-right"></i></button>',
+    fade:false,               //기본값 false - true시에는 fade효과있음
+    slidesToShow:3,
+    slidesToScroll:1,
+    responsive:[{
+        breakpoint : 769,
+        settings:{
+            fade:true,
+            arrows:false
+        }
+    }]
+})

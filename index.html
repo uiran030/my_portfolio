@@ -5,12 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>정의란 포트폴리오</title>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     <link rel="stylesheet" href="./css/common.css">
     <link rel="stylesheet" href="./css/index.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.2/css/all.css">
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
     <script src="js/jquery.mousewheel.min.js"></script>
     <script src="./js/jquery.easypiechart.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 </head>
 
 <body>
@@ -22,10 +24,10 @@
                     <a href="#"><i class="fas fa-home"></i><span>Home</span></a>
                 </li>
                 <li>
-                    <a href="#"><i class="fas fa-id-card-alt"></i><span>About me</span></a>
+                    <a href="#sec2"><i class="fas fa-id-card-alt"></i><span>About me</span></a>
                 </li>
                 <li>
-                    <a href="#"><i class="fas fa-book-open"></i><span>Skills</span></a>
+                    <a href="#sec3"><i class="fas fa-book-open"></i><span>Skills</span></a>
                 </li>
                 <li>
                     <a href="#"><i class="fas fa-folder-open"></i><span>Projects</span></a>
@@ -52,7 +54,7 @@
                     <P>정의란의 포트폴리오</P>
                     <div class="start">
                         <img src="" alt="">
-                        <p><a href="#">START</a></p>
+                        <p><a href="#sec2">START</a></p>
                     </div>
                     <div class="mouse">
                         <!-- <p><i class="fas fa-chevron-down"></i></p>
@@ -64,11 +66,12 @@
         </section>
 
         <section>
-            <div class="sec2 sec">
-                <h2>ABOUT ME</h2>
+            <div class="sec" id="sec2">
+                <h2><span class="big">A</span>BOUT ME</h2>
                 <div class="sec2box">
                     <div class="left">
                         <img src="./img/me.jpg" alt="">
+                        <p>새로운 도전을 겁내기보다는 즐길 수 있는 사람입니다.</p>
                     </div>
                     <div class="middle">
                         <h3>PROFILE</h3>
@@ -78,7 +81,7 @@
                             <p><i class="fas fa-street-view"></i> 경기도 화성시 거주</p>
                             <p><i class="fas fa-mobile-alt"></i> 010-9201-0959</p>
                             <p><i class="fas fa-envelope"></i> dmlfks1230@naver.com</p>
-                            <p><i class="fab fa-github"></i></p>
+                            <p><i class="fab fa-github"></i><a href="https://github.com/uiran030" target="_blank">https://github.com/uiran030</a></p>
                         </div>
                     </div>
                     <div class="right">
@@ -104,7 +107,7 @@
                                     <p>2019.01~2019.02</p>
                                 </div>
                                 <div class="lii">
-                                    <i class="fas fa-school"></i>
+                                    <i class="fas fa-folder"></i>
                                 </div>
                                 <div class="out">
                                     <div class="in">
@@ -140,7 +143,7 @@
                                 <div class="sm">
                                     <p>2021.10~2021.11</p>
                                 </div>
-                                <div class="lii"><i class="fas fa-laptop"></i></div>
+                                <div class="lii"><i class="fas fa-desktop"></i></div>
                                 <div class="out out4">
                                     <div class="in">
                                         <h5>그린컴퓨터학원 수강</h5>
@@ -151,7 +154,7 @@
                             </li>
                             <li>
                                 <div class="sm">
-                                    <p>2021.12~2022.5</p>
+                                    <p>2021.12~2022.05</p>
                                 </div>
                                 <div class="lii"><i class="fas fa-desktop"></i></div>
                                 <div class="out out5">
@@ -169,9 +172,14 @@
         </section>
 
         <section>
-            <div id="skill" class="sec3 sec">
-                <h2>PROFILE</h2>
+            <div id="sec3" class="sec">
+                <h2><span class="big">S</span>KILLS</h2>
                 <div class="row">
+                    <div class="pbox">
+                        <p>협업/데이터 시각화 TOOL 활용 가능</p>
+                        <p>Github</p>
+                        <p>Notion</p>
+                    </div>
                     <div class="container">
                         <p class="tit">HTML5</p>
                         <div class="skills html" data-percent="0">
@@ -207,14 +215,71 @@
         </section>
 
         <section>
-            <div class="sec4 sec">
-                <h2>PROJECT</h2>
+            <div class="sec" id="sec4">
+                <h2><span class="big">P</span>ROJECT</h2>
+                <div class="probox">
+                    <div class="slide-group">
+                        <div class="slide slide1">
+                            <div class="slide_text">
+                                    <img src="./img/mon.png" alt="">
+                                <h4>스타벅스 리뉴얼</h4>
+                                <p>html과 css, js를 이용하여 사이트 재현함</p>
+                            </div>
+                            <div class="go">
+                                <a href="#">링크연결</a>
+                            </div>
+                        </div>
+                        <div class="slide slide2">
+                            <div class="slide_text">
+                                <h4>2번째</h4>
+                                <p>당신과 함께하는 좋은 파트너가 되고 싶습니다.<br>
+                                    최고의 전문성과 신뢰를 바탕으로 함께 성장해 나가겠습니다. </p>
+                            </div>
+                            <div class="go">
+                                <a href="#">링크연결</a>
+                            </div>
+                        </div>
+                        <div class="slide slide3">
+                            <div class="slide_text">
+                                <h4>3번째</h4>
+                                <p>당신과 함께하는 좋은 파트너가 되고 싶습니다.<br>
+                                    최고의 전문성과 신뢰를 바탕으로 함께 성장해 나가겠습니다. </p>
+                            </div>
+                            <div class="go">
+                                <a href="#">링크연결</a>
+                            </div>
+                        </div>
+                        <div class="slide slide4">
+                            <div class="slide_text">
+                                <h4>4번째</h4>
+                                <p>당신과 함께하는 좋은 파트너가 되고 싶습니다.<br>
+                                    최고의 전문성과 신뢰를 바탕으로 함께 성장해 나가겠습니다. </p>
+                            </div>
+                            <div class="go">
+                                <a href="#">링크연결</a>
+                            </div>
+                        </div>
+                        <div class="slide slide5">
+                            <div class="slide_text">
+                                <h4>5번째</h4>
+                                <p>당신과 함께하는 좋은 파트너가 되고 싶습니다.<br>
+                                    최고의 전문성과 신뢰를 바탕으로 함께 성장해 나가겠습니다. </p>
+                            </div>
+                            <div class="go">
+                                <a href="#">링크연결</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
         <section>
             <div class="sec5 sec">
-                <h2>CONTACT</h2>
+                <h2><span class="big">C</span>ONTACT</h2>
+                <div class="conbox">
+                    <p>!!</p>
+                </div>
             </div>
         </section>
     </div>
