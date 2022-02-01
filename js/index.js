@@ -78,14 +78,12 @@ $(window).on('scroll', function(){
 
 //슬릭슬라이더 플러그인 연결
 $('.slide-group').slick({
-    autoplay:false,           //false가 기본값 (auto  X)
-    autoplaySpeed:3000,
-    speed:600,
+    autoplay:false,
+    speed:500,
     dots:true,
-    // arrows:true,            //true가 기본값
     prevArrow:'<button class="slick-arrow slick-prev"><i class="fas fa-arrow-circle-left"></i></button>',
     nextArrow : '<button class="slick-arrow slick-next"><i class="fas fa-arrow-circle-right"></i></button>',
-    fade:false,               //기본값 false - true시에는 fade효과있음
+    fade:false, 
     slidesToShow:3,
     slidesToScroll:1,
     responsive:[{
@@ -95,4 +93,23 @@ $('.slide-group').slick({
             arrows:false
         }
     }]
+})
+
+// 스크롤 시 동적효과
+var wh0 = $('section').eq(0).offset().top
+var wh1 = $('section').eq(1).offset().top                //section2
+var wh2 = $('section').eq(2).offset().top
+var wh3 = $('section').eq(3).offset().top+300
+var wh4 = $('section').eq(4).offset().top                //section5
+$(window).on('scroll', function(){
+    var sct = $(this).scrollTop()
+    if (sct>50 &&sct<wh1 ) {
+        $('#sec2').addClass('on')
+    } else if (sct>wh1 && sct<wh2) {
+        $('#sec3').addClass('on')
+    } else if (sct>wh2 && sct<wh3) {
+        $('#sec4').addClass('on').find('.slide li').css({background:'#d5efff'})
+    } else if (sct>=wh3) {
+        $('section:nth-child(5)').addClass('on')
+    }
 })

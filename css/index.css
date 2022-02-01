@@ -1,12 +1,7 @@
 @import "utf-8";
 @import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
 @import url('https://fonts.googleapis.com/css2?family=Dongle:wght@300&display=swap');
-/* @font-face {
-    font-family: 'GilbeotRainbow';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2112@1.0/GilbeotRainbow.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-} */
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 @font-face {
     font-family: 'SeoulHangangM';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/SeoulHangangM.woff') format('woff');
@@ -25,15 +20,16 @@ body{
     width:100%;
     z-index: 9999;
 }
+#header > h1 {font-family: 'Anton', sans-serif; font-size: 50px; padding-left: 20px;}
 #main .sec {
     height:100vh;
-    border:1px solid red;              /*작업끝내면 지울것*/
+    /* border:1px solid red;              작업끝내면 지울것 */
     display: flex; 
     justify-content: center;
     align-items: center;
     flex-flow: column;
 }
-#main .sec h2 {margin-bottom:50px; border:1px solid black; font-size: 30px; color:#84B8D9;}
+#main .sec h2 {margin-bottom:50px; font-size: 30px; color:#84B8D9;}
 #main .sec h2 .big {font-size: 50px; color:#476092;}
 
 /* section1-타이핑효과작업 */
@@ -83,10 +79,11 @@ body{
     height: 100vh;
 }
 #main .sec1 {
-    background-image: url(../img/sct1bg.jpg);
-    background-size:cover;
-    position:relative;
+    background-size: 100% auto;
+    background-image: url(../img/sct11.jpg);
+    background-size: cover;
 }
+#main .sec1.on {background-position: 0 -200px;}
 #main .sec1n {
     position:absolute;
     top:300px; left: 50%;
@@ -100,13 +97,47 @@ body{
 #main .sec1n .start {
     position:relative;
 }
+#main .sec1n .arrow {
+    transition:all 0.3s;
+    position:absolute;
+    top:450px; left: 50%;
+    transform: translateX(-50%);
+    margin:0 auto;
+    display: flex;
+    flex-flow: column;
+}
+#main .sec1n .arrow i{
+    animation:iani 1.5s infinite;
+}
+#main .sec1n .arrow i:nth-child(1){
+    animation-delay: 0s;
+}
+/* #main .sec1n .arrow i:nth-child(2){
+    animation-delay: 0.5s;
+}
+#main .sec1n .arrow i:nth-child(3){
+    animation-delay: 1s;
+} */
+@keyframes iani {
+    0% {}
+    50% {transform: translateY(50px);}
+    100% { opacity: 0;}
+}
 
 
 /* main -section2 */
 #main #sec2 {
     /* background-image: url(../img/water6.png); */
-    /* background-size: cover; */
+    background-size: 100% auto;
+    background-image: url(../img/sct21.jpg);
+    background-position: 0 -1800px;
+    background-repeat: no-repeat;
+    transition:all 3s
 }
+#main #sec2.on {
+    background-position:0 -300px;
+}
+/* #main #sec2.on {opacity: 1;} */
 #main .sec2box{
     width:80%; height:60%;
     border-radius: 30px;
@@ -126,6 +157,7 @@ body{
     background-color: #fff;
 }
 #main .sec2box .left img{width:100%; border-radius: 10px;}
+#main .sec2box .left p{text-align: center;}
 #main .sec2box .middle {display: flex; flex-flow: column;}
 #main .sec2box .profile {flex:1; margin-top:80px;}
 #main .sec2box .profile p {line-height: 3em;}
@@ -136,6 +168,7 @@ body{
     font-size: 20px;
 }
 #main .sec2box .profile p:nth-child(4) i {margin-left:23px;} 
+#main .sec2box .profile p:nth-child(6):hover a {color:#0652ce} 
 #main #sec2 .right {display: flex; flex-flow: column;}
 #main #sec2 .right .himap {
     width:100%; 
@@ -179,6 +212,14 @@ body{
 
 
 /* main -section3 */
+#sec3 {
+    background-size: 100% auto;
+    background-image: url(../img/sct21.jpg);
+    background-position: 0 -1800px;
+    background-repeat: no-repeat;
+    transition:all 5s 2s;
+}
+#sec3.on {background-position:0 -300px;}
 #sec3 .pbox {
     width:20%;
     text-align: center;
@@ -189,7 +230,7 @@ body{
     margin:10px 0; 
     padding:10px 0;
     border-radius: 10px;
-    box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.2);
+    box-shadow: 1px 1px 2px 1px rgba(0,0,0,0.2);
 }
 #sec3 .pbox p:nth-child(1) {
     background-color: rgb(248, 248, 248);
@@ -203,7 +244,7 @@ body{
     height: 60%;
     justify-content: flex-end;
     background-color: #fdfdfd;
-    box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.2);
+    box-shadow: 10px 10px 10px 10px rgba(0,0,0,0.2);
     border-radius: 5px;
 }
 .tit {
@@ -222,6 +263,14 @@ body{
 }
 
 /* main -section4 */
+#sec4 {
+    background-size: 100% auto;
+    background-image: url(../img/sct21.jpg);
+    background-position: 0 -1800px;
+    background-repeat: no-repeat;
+    transition:all 5s 2s;
+}
+#sec4.on {background-position: 0 -300px;}
 #sec4 .probox {
     width:70%; height:70%;
 }
@@ -231,21 +280,40 @@ body{
     height: 640px; 
     border-radius: 10px;
     margin:15px 40px;
-    background-color: white;
+}
+.probox .slide-group .slide1 > div {
+    transition:all 0.5s;
 }
 .probox .slide-group .slide .slide_text{
     height: 85%;
     border-radius: 10px;
-    box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.2);
+    box-shadow: 3px 3px 10px 2px rgba(0,0,0,0.2);
+    background-color: white;
+    padding:10px;
 }
-.probox .slide-group .slide .slide_text  img{}
+/* .probox .slide-group .slide .slide_text:hover{
+    transform:rotateY(180deg)
+} */
+.probox .slide-group .slide .slide_text img{text-align: center;}
+.probox .slide-group .slide .slide_text > p {font-size: 13px; color:#333;}
 .probox .slide-group .slide .go{
     margin-top:20px; 
     height: 60px;
     border-radius: 10px;
-    box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.2);
+    box-shadow: 3px 3px 10px 2px rgba(0,0,0,0.2);
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-
+.probox .slide-group .slide .go a {
+    font-size: 25px;
+    transition:all 0.3s;
+}
+.probox .slide-group .slide .go a:hover {
+    color:#0652ce;
+    transform: scale(1.2);
+}
 .probox .slick-arrow {
     position:absolute; 
     top:50%; 
@@ -280,10 +348,66 @@ body{
 }
 
 /* main -section5 */
-.sec5 .conbox {
+section:nth-child(5) {
+    /* background-color: #d5efff; */
+    position:relative;
+    overflow: hidden;
+}
+section:nth-child(5) .circle{
+    position:absolute;
+    top:0%; left: 0%;
+     /* right:0%; bottom:0%; */
+    background-color: #d5efff;
+    transition:all 2s;
+    z-index: -1;
+    width:100%; height:100%;
+    transition-timing-function:linear;
+    
+}
+section:nth-child(5).on .circle {
+    border-radius: 50%;
+    top:50%; left: 50%; 
+    animation:ani1 2s 2s both;
+    width:150px;
+    height:150px;
+    margin-top:-75px;
+    margin-left:-75px;
+}
+@keyframes ani1 {
+    0% {transform: translateY(0px); animation-timing-function: ease-out;}
+    16% {transform: translateY(400px); animation-timing-function: ease-in;}
+    32% {transform: translateY(380px); animation-timing-function: ease-out;}
+    50% {transform: translateY(350px); animation-timing-function: ease-in;}
+    66% {transform: translateY(380px); animation-timing-function: ease-out;}
+    82% {transform: translateY(400px); animation-timing-function: ease-in;}
+    100% {transform: translate(1200px, 400px) rotate(3turn); animation-timing-function: ease-out;}
+}
+
+#sec5 .conbox {
+    margin:0 auto;
     width:40%;
     height:40%;
-    background-color: rgba(204, 204, 204, 0.1);
+    background-color: rgb(255, 255, 255);
     border-radius: 15px;
     box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.2);
+    z-index: 999;
+    padding:10px;
 }
+#sec5 .conbox h4 {
+    font-size: 30px;
+    text-align: center;
+    color:rgb(104, 104, 104);
+    padding:10px
+}
+#sec5 .conbox .conul li {
+    padding:30px; 
+    font-size: 18px; 
+    position:relative;
+    width:100%;
+    height:100%;
+    padding-bottom: 30px;
+    vertical-align: middle;
+}
+#sec5 .conbox .conul li > i {width:50px; font-size: 30px; color:#cccccc;}
+#sec5 .conbox .conul li:nth-child(1) > i {margin-left: 5px;}
+#sec5 .conbox .conul li > a:hover {color:#0652ce}
