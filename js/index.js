@@ -103,13 +103,19 @@ var wh3 = $('section').eq(3).offset().top+300
 var wh4 = $('section').eq(4).offset().top                //section5
 $(window).on('scroll', function(){
     var sct = $(this).scrollTop()
-    if (sct>50 &&sct<wh1 ) {
+    if (sct>50 && sct<wh1) {
         $('#sec2').addClass('on')
+        $('#menu li:nth-child(1)').addClass('on').siblings().removeClass('on')
     } else if (sct>wh1 && sct<wh2) {
         $('#sec3').addClass('on')
+        $('#menu li:nth-child(2)').addClass('on').siblings().removeClass('on')
     } else if (sct>wh2 && sct<wh3) {
         $('#sec4').addClass('on').find('.slide li').css({background:'#d5efff'})
-    } else if (sct>=wh3) {
+        $('#menu li:nth-child(3)').addClass('on').siblings().removeClass('on')
+    } else if (sct>wh3 && sct<wh4) {
         $('section:nth-child(5)').addClass('on')
+        $('#menu li:nth-child(4)').addClass('on').siblings().removeClass('on')
+    } else {
+        $('#menu li:nth-child(5)').addClass('on').siblings().removeClass('on')
     }
 })
