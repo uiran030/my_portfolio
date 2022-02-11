@@ -33,6 +33,18 @@ function typing(){
     } 
 }
 
+$('#menu li a i').on('click', function(){
+    // $(this).parent().addClass('on').siblings().removeClass('on')
+    var index = $(this).parent().parent().index()
+    console.log(index)
+    var sectTop = $('section').eq(index).offset().top
+    $('html').animate({
+        scrollTop:sectTop
+    }, 500)
+
+    return false
+})
+
 
 // // 마우스 휠 이벤트 (1section당)
 // var prevt = 0;
@@ -99,23 +111,26 @@ $('.slide-group').slick({
 var wh0 = $('section').eq(0).offset().top
 var wh1 = $('section').eq(1).offset().top                //section2
 var wh2 = $('section').eq(2).offset().top
-var wh3 = $('section').eq(3).offset().top+300
+var wh3 = $('section').eq(3).offset().top
+// var wh3 = $('section').eq(3).offset().top+300
 var wh4 = $('section').eq(4).offset().top                //section5
+
 $(window).on('scroll', function(){
     var sct = $(this).scrollTop()
     if (sct>50 && sct<wh1) {
         $('#sec2').addClass('on')
-        $('#menu li:nth-child(1)').addClass('on').siblings().removeClass('on')
-    } else if (sct>wh1 && sct<wh2) {
+        $('#menu li').eq(0).addClass('on').siblings().removeClass('on')
+    } else if (sct>=wh1 && sct<wh2) {
         $('#sec3').addClass('on')
-        $('#menu li:nth-child(2)').addClass('on').siblings().removeClass('on')
-    } else if (sct>wh2 && sct<wh3) {
+        $('#menu li').eq(1).addClass('on').siblings().removeClass('on')
+    } else if (sct>=wh2 && sct<wh3) {
         $('#sec4').addClass('on').find('.slide li').css({background:'#d5efff'})
-        $('#menu li:nth-child(3)').addClass('on').siblings().removeClass('on')
-    } else if (sct>wh3 && sct<wh4) {
+        $('#menu li').eq(2).addClass('on').siblings().removeClass('on')
+    } 
+    else if (sct>=wh3 && sct<wh4) {
         $('section:nth-child(5)').addClass('on')
-        $('#menu li:nth-child(4)').addClass('on').siblings().removeClass('on')
-    } else {
-        $('#menu li:nth-child(5)').addClass('on').siblings().removeClass('on')
+        $('#menu li').eq(3).addClass('on').siblings().removeClass('on')
+    } else if (sct>=wh4){
+        $('#menu li').eq(4).addClass('on').siblings().removeClass('on')
     }
 })
