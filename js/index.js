@@ -29,7 +29,7 @@ function typing(){
         setTimeout(function(){
             $(".typing").html('');
             tyInt = setInterval(typing,100);
-        },2000);
+        },500);
     } 
 }
 
