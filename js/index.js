@@ -46,24 +46,10 @@ $('#menu li a i').on('click', function(){
 })
 
 
-// // 마우스 휠 이벤트 (1section당)
-// var prevt = 0;
-// $('section').on('mousewheel',function(e, delta){
-//     if (delta>0) {
-//         prevt = $(this).prev().offset().top
-//     } else if (delta<0) {
-//         prevt = $(this).next().offset().top
-//     }
-//     $('html').animate({
-//         scrollTop:prevt
-//     }, 1000)
-// })
-
-
 // 이지파이
 var skillTop = $('#sec3').offset().top - $(window).height()
 var arrChartColor = ['#6CAFD9', '#7CDAFA', '#699AFA', '#6AB8F7', '#3E90FA'];
-var arrPercent = [90, 90, 70, 80, 50]
+var arrPercent = [90, 80, 80, 70, 50]
 
 $(window).on('scroll', function(){
     $('#sec3 .skills').each(function(idx){
@@ -133,4 +119,19 @@ $(window).on('scroll', function(){
     } else if (sct>=wh4){
         $('#menu li').eq(4).addClass('on').siblings().removeClass('on')
     }
+})
+
+
+// 프로젝트 화면 호버 시 밑부분 보이게
+$('.slide .imgbox').on('mouseover', function(){
+    var ah = $(this).innerHeight();
+    var img = $(this).find('img');
+    var imgh = img.innerHeight();
+    img.stop().animate({top:ah-imgh}, 3000);
+})
+$('.slide .imgbox').on('mouseout', function(){
+    var ah = $(this).innerHeight();
+    var img = $(this).find('img');
+    var imgh = img.innerHeight();
+    img.stop().animate({top:0}, 3000);
 })
