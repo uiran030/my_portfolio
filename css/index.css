@@ -254,7 +254,6 @@
     top:0px; right:0; left:0;
 }
 .probox .slide-group .slide .slide_text img{text-align: center; }
-.probox .slide-group .slide .slide_text {}
 .probox .slide-group .slide .slide_text > h4{ text-align:center; margin:20px 0;}
 .probox .slide-group .slide .slide_text > p {font-size: 13px; color:#333; min-height:115px;}
 
@@ -297,17 +296,20 @@
 }
 .probox .slick-arrow.slick-prev { right:100%; z-index:99;}
 .probox .slick-arrow.slick-next { left:100%; }
-.probox .slick-dots { 
-    position:absolute; 
-    bottom:30px; 
-    width:100%;
+.probox .slick-dots {
     text-align: center;
 }
-.probox .slick-dots li button { 
-    width:0px; 
-    height:0px; 
+.probox .slick-dots li {
+    display: inline-block;
+    margin:0 10px;
+}
+.probox .slick-dots li button {
+    width:20px; height:20px;
+    background-color: #033e9e;
+    color:#033e9e;
+    border-radius: 50%;
     border:none;
-    display: none;
+    cursor: pointer;
 }
 .probox .plpa {
     font-size: 20px;
