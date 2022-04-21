@@ -49,7 +49,7 @@ $('#menu li a i').on('click', function(){
 // 이지파이
 var skillTop = $('#sec3').offset().top - $(window).height()
 var arrChartColor = ['#6CAFD9', '#7CDAFA', '#699AFA', '#6AB8F7', '#3E90FA'];
-var arrPercent = [90, 80, 80, 70, 50]
+var arrPercent = [90, 80, 80, 60, 50]
 
 $(window).on('scroll', function(){
     $('#sec3 .skills').each(function(idx){

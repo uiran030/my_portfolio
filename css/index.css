@@ -43,28 +43,23 @@
     height:100%;
 }
 #main .sec1n .typing {font-weight: normal; font-size: 30px;}
-#main .sec1n .start {
-    position:relative;
-}
+#main .sec1n .start { position:relative; transition: all 0.3s; margin-top:50px; }
+#main .sec1n .start:hover { transform:scale(1.1); }
 #main .sec1n .arrow {
     transition:all 0.3s;
     position:absolute;
-    top:450px; left: 50%;
+    top:500px; left: 50%;
     transform: translateX(-50%);
-    margin:0 auto;
     display: flex;
     flex-flow: column;
+    font-size: 25px;
 }
-#main .sec1n .arrow i{
-    animation:iani 1.5s infinite;
-}
-#main .sec1n .arrow i:nth-child(1){
-    animation-delay: 0s;
-}
+#main .sec1n .arrow > .arrow_text {font-size: 14px;}
+#main .sec1n .arrow i{ animation:iani 2s infinite; }
 @keyframes iani {
     0% {}
-    50% {transform: translateY(50px);}
-    100% { opacity: 0;}
+    50% {transform: translateY(20px);}
+    100% { transform: translateX(0);}
 }
 
 
@@ -104,7 +99,7 @@
     justify-content: flex-start;
     align-items:center;
 }
-#main .sec2box .left img{width:100%; border-radius: 10px; margin-bottom: 20px;}
+#main .sec2box .left img{width:80%; margin-bottom: 20px; border:#fff;}
 #main .sec2box .left p{text-align: center;}
 #main .sec2box .middle {display: flex; flex-flow: column;}
 #main .sec2box .profile {flex:1; margin-top:80px;}
@@ -302,14 +297,19 @@
 .probox .slick-dots li {
     display: inline-block;
     margin:0 10px;
-}
-.probox .slick-dots li button {
+    
     width:20px; height:20px;
-    background-color: #033e9e;
-    color:#033e9e;
+    background-color: #aaa;
     border-radius: 50%;
     border:none;
     cursor: pointer;
+}
+.probox .slick-dots li button {
+    border:none;
+    display: none;
+}
+.probox .slick-dots li.slick-active{
+    background-color: #033e9e;
 }
 .probox .plpa {
     font-size: 20px;

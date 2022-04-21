@@ -56,3 +56,6 @@ body{
 ul{list-style: none;}
 img {max-width: 100%;}
 a{color:inherit; text-decoration: none;}
+
+.point{text-align: center;}
+.point > p:nth-child(2) {font-size: 20px;}
