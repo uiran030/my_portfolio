@@ -43,11 +43,12 @@ body{
 #header #menu li { margin:20px 0; }
 #header #menu li.on i { color:#0652ce; border:2px solid #0652ce }
 #header #menu i {
-    border:2px solid rgb(124, 124, 124); 
+    border:2px solid rgb(85, 85, 85); 
     font-size:20px; 
     padding:10px; 
     border-radius: 50%;
     margin-right:10px;
+    color:rgba(85,85,85);
 }
 #header #menu span {display: none;}
 #header #menu li:hover span { display: inline-block;}
