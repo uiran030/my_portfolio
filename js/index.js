@@ -41,7 +41,6 @@ $('#menu li a i').on('click', function(){
     $('html').animate({
         scrollTop:sectTop
     }, 500)
-
     return false
 })
 
@@ -49,7 +48,7 @@ $('#menu li a i').on('click', function(){
 // 이지파이
 var skillTop = $('#sec3').offset().top - $(window).height()
 var arrChartColor = ['#6CAFD9', '#7CDAFA', '#699AFA', '#6AB8F7', '#3E90FA'];
-var arrPercent = [90, 80, 80, 60, 50]
+var arrPercent = [90, 80, 80, 50, 50]
 
 $(window).on('scroll', function(){
     $('#sec3 .skills').each(function(idx){
@@ -95,15 +94,15 @@ $('.slide-group').slick({
 
 // 스크롤 시 동적효과
 var wh0 = $('section').eq(0).offset().top
-var wh1 = $('section').eq(1).offset().top                //section2
+var wh1 = $('section').eq(1).offset().top                //section2-about
 var wh2 = $('section').eq(2).offset().top
 var wh3 = $('section').eq(3).offset().top
 // var wh3 = $('section').eq(3).offset().top+300
-var wh4 = $('section').eq(4).offset().top                //section5
+var wh4 = $('section').eq(4).offset().top               //section5-contact
 
 $(window).on('scroll', function(){
     var sct = $(this).scrollTop()
-    if (sct>50 && sct<wh1) {
+    if (sct>100 && sct<wh1) {
         $('#sec2').addClass('on')
         $('#menu li').eq(0).addClass('on').siblings().removeClass('on')
     } else if (sct>=wh1 && sct<wh2) {
@@ -121,6 +120,11 @@ $(window).on('scroll', function(){
     }
 })
 
+// start 버튼 누를 때 about부분 배경 내려가게
+$('.sec1 .sec1n .start').on('click', function(){
+    $('#sec2').addClass('on')
+})
+
 
 // 프로젝트 화면 호버 시 밑부분 보이게
 $('.slide .imgbox').on('mouseover', function(){
@@ -134,10 +138,4 @@ $('.slide .imgbox').on('mouseout', function(){
     var img = $(this).find('img');
     var imgh = img.innerHeight();
     img.stop().animate({top:0}, 3000);
-})
-
-
-$('.sec1 .start').on('click', function(){
-    var wh = $('#sec2').offset().top
-    $('html').animate({scrollTop:wh}, '3000');
 })
